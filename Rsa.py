@@ -27,7 +27,7 @@ class Rsa:
 
         d, p, o = xmdc(e, totient)
         print("-1 ", d)
-        if d < 0:
+        if d < 0:   # Testar trocar n por totiente
             d = d % n
             d += n
             print("-2 ", d)
