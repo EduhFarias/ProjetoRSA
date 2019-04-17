@@ -1,7 +1,8 @@
 import sympy
 from Rsa import *
+from User import *
 
-#Cifração -------------------------------------------------------------
+
 def main():
     """print("0. Criar chaves\n1. Cifrar mensagem\n2. Decifrar mensagem\n3. Encerrar")
     choice = int(input())
@@ -21,7 +22,20 @@ def main():
         choice = int(input())
 
     """
-    p = sympy.randprime(10, 50)
+    
+    # Testando classe user, e como manipular arquivo
+    newUser = User("","")
+    newUser.createNewUser()
+    print(newUser.name, newUser.password, newUser.accepted)
+    file = open("teste.txt", "w")
+    file.write(newUser.name + "\n")
+    file.write(newUser.password)
+    file.flush()
+    file.close()
+    file = open("teste.txt", "r")
+    print(file.read(1))
+
+    """p = sympy.randprime(10, 50)
     q = sympy.randprime(10, 50)
     n = p * q
     totiente = (p-1) * (q-1)
@@ -61,14 +75,7 @@ def main():
             o = o % totiente
             o += totiente
         conv = (saida[i] ** o) % n
-        print(chr(conv), conv)
-
-#Cifração -------------------------------------------------------------
-
-#Decifração -------------------------------------------------------------
-
-# chave privada(d,n) d é o coeficiente para decifrar e n o conjunto, pode ser n ou p e q
-
+        print(chr(conv), conv)"""
 
 def xmdc(a, b):
     if b == 0:
@@ -76,7 +83,6 @@ def xmdc(a, b):
     else:
         x, y, d = xmdc(b, a % b)
         return [y, x - (a // b) * y, d]
-#Decifração -------------------------------------------------------------
 
 if __name__ == '__main__':
     main()
