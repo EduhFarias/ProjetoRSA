@@ -15,7 +15,10 @@ class Rsa:
         self.privateKey = []
         self.message = ""
 
-    def setup(self):
+    def setup(self): # setup(self, publicKey, privateKey)
+        # Recebe tbm, publicKey e privateKey
+        # Caso as chaves não estejam definidas elas serão criadas, em ambos os casos é retornado a chave publica
+        # em forma de tupla para o usuario ----- Quebrar a funçao em duas, setup e generateKey
         p = sympy.randprime(10, 100)
         q = sympy.randprime(10, 100)
         n = p * q
@@ -31,7 +34,7 @@ class Rsa:
         self.publicKey = [n, e]
         self.privateKey = [n, d]
 
-    def encrypt(self, text):
+    def encrypt(self, text): #encrypt(self, text, publicKey)
         message = ""
         for i in range(len(text)):
             message += chr((ord(text[i]) ** self.publicKey[1]) % self.publicKey[0])
