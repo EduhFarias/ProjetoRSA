@@ -5,6 +5,7 @@ class Client:
   name = ""
   password = ""
   # users = []
+	# requests = []
 	
   def __init__(self, name, password):
     self.name = name
