@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=3cm,right=2cm,top=3cm,bottom=2cm]{}
+\usepackage[brazilian]{babel}
+\usepackage{graphicx}
+
+\begin{document}
+
+\begin{center} \Large \textbf{INSTITUTO FEDERAL DE ALAGOAS} \end{center}
+\begin{center}
+    \large {Eduardo Henrique Farias Silva}
+\end{center}
+\begin{center} \large Instituto de computação - IC\end{center}
+\vspace{7cm}
+\begin{center} \LARGE \textbf{Criptografia RSA} \end{center}
+\vspace*{6cm}
+\begin{center} \large Maceió - AL\end{center}
+\begin{center} \large 2019 \end{center}
+\pagebreak
+
+\large \textbf{1. Módulo Rsa} \\ \\
+\hspace{1cm} Para a construção do módulo Rsa foram definidas três funções base: setup, encrypt e decrypt.\\ \\
+\hspace{1cm} A função setup é responsável por definir as chaves pública e privada. As chaves são buscadas na base dos dados, caso ainda não estejam definidas são criadas usando o algoritmo RSA. Para criar as chaves são necessárias duas funções, a função mdc responsável por obter a chave pública e a função mdc estendida para obter a chave privada.\\ \\
+\hspace{1cm} A função encrypt recebe a mensagem que será cifrada e a chave pública e retorna a mensagem que será enviada, já cifrada. \\ \\
+\hspace{1cm} A função decrypt recebe a mensagem que será lida e está cifrada e retorna a mensagem legível\\ \\
+
+
+\large \textbf{2.Módulo Client}\\ \\
+\hspace*{1cm} Na construção do módulo Client foram definidas quatro funções: addUser, removeUser, checkUser e  closing. \\ \\
+\hspace{1cm} Função addUser é responsável por adicionar um novo usuário ao sistema, permitindo que ele possa enviar e receber mensagens seguras.\\ \\
+\hspace{1cm} Função removeUser é responsável por remover o usuário do sistema.\\ \\
+\hspace{1cm} Função checkUser é responsável por checar no banco de dados se tal usuário está registrado.\\ \\
+\hspace{1cm} Função closing é responsável por guarda as chaves pública e privada e cifrar todos os usuários, e guarda os dados em um arquivo
+
+
+\end{document}
